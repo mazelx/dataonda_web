@@ -570,7 +570,7 @@ $(function() {
             }
         },
         success: function(label) {
-            label.addClass("valid").text("Perfect!");
+            label.addClass("valid").text("OK!");
         },
         submitHandler: function(element) {
 
@@ -596,7 +596,8 @@ $(function() {
                 type: type,
                 data: data,
                 success: function(response) {
-                    if (response.type == 'success') {
+                    // bypass email form ajax status
+                    // if (response.type == 'success') {
                         $("#contactForm").before("<div class='alert alert-success' role='alert'><a href='#' class='close' data-dismiss='alert'>&times;</a>" + response.text + "</div>");
                         $(ajaxform).each(function() {
                             this.reset();
@@ -604,10 +605,10 @@ $(function() {
                         }).find('.valid').each(function() {
                             $(this).remove('label.valid');
                         })
-                    } else if (response.type == 'error') {
-                        $("#contactForm").before("<div class='alert alert-danger' role='alert'><a href='#' class='close' data-dismiss='alert'>&times;</a>" + response.text + "</div>");
-                        $(ajaxform).find('[name="submit"]').html('<i class="fa fa-paper-plane fa-fw"></i> Send');
-                    }
+                    // } else if (response.type == 'error') {
+                    //     $("#contactForm").before("<div class='alert alert-danger' role='alert'><a href='#' class='close' data-dismiss='alert'>&times;</a>" + response.text + "</div>");
+                    //     $(ajaxform).find('[name="submit"]').html('<i class="fa fa-paper-plane fa-fw"></i> Send');
+                    // }
                 }
             });
 
