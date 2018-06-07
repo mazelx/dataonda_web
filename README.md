@@ -27,3 +27,5 @@ Note: Images used in the theme are for preview purpose only.
 
 -	Author:	Mauritius D'Silva
 -	URL:	www.mauritiusdsilva.com
+
+dataonda.com static webpage
